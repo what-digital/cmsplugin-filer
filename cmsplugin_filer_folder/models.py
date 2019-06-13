@@ -20,7 +20,7 @@ class FilerFolder(CMSPlugin):
     STYLE_CHOICES = settings.CMSPLUGIN_FILER_FOLDER_STYLE_CHOICES
     DEFAULT_STYLE = settings.CMSPLUGIN_FILER_FOLDER_DEFAULT_STYLE
     title = models.CharField(_("title"), max_length=255, null=True, blank=True)
-    folder = FilerFolderField(null=True, on_delete=models.SET_NULL)
+    folder = FilerFolderField(null=True, on_delete=models.PROTECT)
     style = models.CharField(
         _('Style'), choices=STYLE_CHOICES, default=DEFAULT_STYLE, max_length=50)
     cmsplugin_ptr = models.OneToOneField(

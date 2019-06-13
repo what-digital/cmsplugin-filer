@@ -35,7 +35,7 @@ class FilerFile(CMSPlugin):
     file = FilerFileField(
         verbose_name=_('file'),
         null=True,
-        on_delete=models.SET_NULL,
+        on_delete=models.PROTECT,
     )
     target_blank = models.BooleanField(_('Open link in new window'), default=False)
     style = models.CharField(

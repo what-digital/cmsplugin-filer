@@ -38,7 +38,7 @@ class FilerImage(CMSPlugin):
         blank=True,
         default=None,
         verbose_name=_("image"),
-        on_delete=models.SET_NULL,
+        on_delete=models.PROTECT,
     )
     image_url = models.URLField(_("alternative image url"), null=True, blank=True, default=None)
     alt_text = models.CharField(_("alt text"), null=True, blank=True, max_length=255)
@@ -68,7 +68,7 @@ class FilerImage(CMSPlugin):
         verbose_name=_("file link"),
         help_text=_("if present image will be clickable"),
         related_name='+',
-        on_delete=models.SET_NULL,
+        on_delete=models.PROTECT,
     )
     original_link = models.BooleanField(_("link original image"), default=False,
                                         help_text=_("if present image will be clickable"))

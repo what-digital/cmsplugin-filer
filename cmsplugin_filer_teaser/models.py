@@ -20,7 +20,7 @@ class FilerTeaser(CMSPlugin):
         blank=True,
         null=True,
         verbose_name=_("image"),
-        on_delete=models.SET_NULL,
+        on_delete=models.PROTECT,
     )
     image_url = models.URLField(_("alternative image url"), null=True, blank=True, default=None)
     style = models.CharField(
