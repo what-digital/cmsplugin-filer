@@ -46,6 +46,7 @@ class FilerFile(CMSPlugin):
         to=CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.SET_NULL,
     )
 
     objects = FilerPluginManager(select_related=('file',))
