@@ -69,7 +69,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='filerimage',
             name='thumbnail_option',
-            field=models.ForeignKey(blank=True, to='cmsplugin_filer_image.ThumbnailOption', help_text='overrides width, height, crop and upscale with values from the selected thumbnail option', null=True, verbose_name='thumbnail option'),
+            field=models.ForeignKey(on_delete=models.CASCADE, blank=True, to='cmsplugin_filer_image.ThumbnailOption', help_text='overrides width, height, crop and upscale with values from the selected thumbnail option', null=True, verbose_name='thumbnail option'),
             preserve_default=True,
         ),
     ]
