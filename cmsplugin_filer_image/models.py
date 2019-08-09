@@ -47,7 +47,8 @@ class FilerImage(CMSPlugin):
         help_text=_('do not resize the image. use the original image instead.'))
     thumbnail_option = models.ForeignKey(
         'filer.ThumbnailOption', null=True, blank=True, verbose_name=_("thumbnail option"),
-        help_text=_('overrides width, height, crop and upscale with values from the selected thumbnail option'))
+        help_text=_('overrides width, height, crop and upscale with values from the selected thumbnail option'),
+        on_delete=models.CASCADE,)
     use_autoscale = models.BooleanField(_("use automatic scaling"), default=False,
                                         help_text=_('tries to auto scale the image based on the placeholder context'))
     width = models.PositiveIntegerField(_("width"), null=True, blank=True)
@@ -80,6 +81,7 @@ class FilerImage(CMSPlugin):
         to=CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE,
     )
 
     # we only add the image to select_related. page_link and file_link are FKs
