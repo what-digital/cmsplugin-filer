@@ -17,11 +17,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='filerteaser',
             name='image',
-            field=filer.fields.image.FilerImageField(on_delete=django.db.models.deletion.SET_NULL, verbose_name='image', blank=True, to='filer.Image', null=True),
+            field=filer.fields.image.FilerImageField(on_delete=models.SET_NULL, verbose_name='image', blank=True, to='filer.Image', null=True),
         ),
         migrations.AlterField(
             model_name='filerteaser',
             name='page_link',
-            field=cms.models.fields.PageField(on_delete=django.db.models.deletion.SET_NULL, blank=True, to='cms.Page', help_text='if present image will be clickable', null=True, verbose_name='page link'),
+            field=cms.models.fields.PageField(on_delete=models.SET_NULL, blank=True, to='cms.Page', help_text='if present image will be clickable', null=True, verbose_name='page link'),
         ),
     ]

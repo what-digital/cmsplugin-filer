@@ -6,11 +6,9 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from filer.fields.file import FilerFileField
 from filer.fields.image import FilerImageField
-from filer.utils.compatibility import python_2_unicode_compatible
 from os.path import basename
 
 
-@python_2_unicode_compatible
 class FilerVideo(CMSPlugin):
     # player settings
     movie = FilerFileField(
@@ -51,6 +49,7 @@ class FilerVideo(CMSPlugin):
         to=CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE,
     )
 
     def __str__(self):

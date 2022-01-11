@@ -17,11 +17,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='filerlinkplugin',
             name='file',
-            field=filer.fields.file.FilerFileField(on_delete=django.db.models.deletion.SET_NULL, blank=True, to='filer.File', null=True),
+            field=filer.fields.file.FilerFileField(on_delete=models.SET_NULL, blank=True, to='filer.File', null=True),
         ),
         migrations.AlterField(
             model_name='filerlinkplugin',
             name='page_link',
-            field=cms.models.fields.PageField(on_delete=django.db.models.deletion.SET_NULL, blank=True, to='cms.Page', help_text='A link to a page has priority over urls.', null=True, verbose_name='page'),
+            field=cms.models.fields.PageField(on_delete=models.SET_NULL, blank=True, to='cms.Page', help_text='A link to a page has priority over urls.', null=True, verbose_name='page'),
         ),
     ]
