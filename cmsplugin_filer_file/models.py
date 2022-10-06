@@ -51,7 +51,7 @@ class FilerFile(CMSPlugin):
 
     def get_icon_url(self):
         if self.file_id:
-            return self.file.icons['32']
+            return self.file.icons.get('32', '')
         return ''
 
     def file_exists(self):
